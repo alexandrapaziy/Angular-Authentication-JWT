@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <a [routerLink]="'/'" mat-button>STORAGE</a>
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/login'">LOGIN</a>
+    <a *ngIf="!isLoggedIn" mat-button [routerLink]="'/register'" class="ml10 mr20 ">REGISTER</a>
+
+    <a *ngIf="isLoggedIn && worker" mat-button routerLink="/director-dashboard">{{login.getWorker().email}}</a>
+    <a (click)="logout()" *ngIf="isLoggedIn" mat-button class="ml20 mr20">LOGOUT</a>
+
+</mat-toolbar>

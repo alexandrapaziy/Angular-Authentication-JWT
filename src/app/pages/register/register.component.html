@@ -1,0 +1,63 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">REGISTRATION</h3>
+
+                <form (ngSubmit)="formSubmit()">
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Identification number</mat-label>
+                        <input required matInput type="text" [(ngModel)]="worker.id" name="id">
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input required matInput type="text" [(ngModel)]="worker.name" name="name">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Surname</mat-label>
+                        <input required matInput type="text" [(ngModel)]="worker.surname" name="surname">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Patronymic</mat-label>
+                        <input required matInput type="text" [(ngModel)]="worker.patronymic" name="patronymic">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input required matInput type="email" [(ngModel)]="worker.email" name="email">
+                        <mat-icon matSuffix>alternate_email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Phone</mat-label>
+                        <input required matInput type="text" [(ngModel)]="worker.phone" name="phone">
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input required matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="worker.password"
+                            name="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button mat-raised-button type="submit" color="primary">REGISTER</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
